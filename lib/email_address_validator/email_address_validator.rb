@@ -17,17 +17,13 @@ class EmailAddressValidator
 		return ok
 	end
 
-	def self.debug=(v)
-		@debug = v
-	end
-	
-	def self.debug?
-		@debug
-	end
-
-	def self.debug(*args)
-		if debug?
-			$stderr.puts args.map { |a| a.to_s }.join(' ')
+	def self.debug(*args, &blk)
+		if block_given?
+			@debug = blk
+		elsif !args[0]
+			@debug = nil
+		elsif @debug
+			@debug.call(args.map { |a| a.to_s }.join(' '))
 		end
 	end
 

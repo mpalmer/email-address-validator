@@ -10,5 +10,6 @@ require 'mocha'
 class EmailAddressValidator
 	def self.reset!
 		@check_mx = @check_dns = @debug = false
+		@helo_domain = nil
 	end
 end

@@ -1,0 +1,2 @@
+* More comprehensive logging support, especially for "important" failures
+  (like why a validation soft-failed)

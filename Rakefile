@@ -51,10 +51,10 @@ Rcov::RcovTask.new('rcov') do |t|
 end
 
 GEM_SPEC = Gem::Specification.new do |s|
-  s.name = 'email_address_validator'
+  s.name = 'email-address-validator'
   s.version = PROJECT_VERSION
   s.summary = 'A class to assist in validating e-mail addresses'
-  s.homepage = "http://theshed.hezmatt.org/email_address_validator"
+  s.homepage = "http://theshed.hezmatt.org/email-address-validator"
   s.author = 'Matt Palmer'
   s.email = 'mpalmer@hezmatt.org'
   s.files = DIST_FILES

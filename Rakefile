@@ -10,7 +10,7 @@ rescue LoadError
 	puts "Coverage tasks won't work for you."
 end
 
-PROJECT_VERSION = '0.0.1'
+PROJECT_VERSION = '0.0.2'
 
 # Ruby library code.
 LIB_FILES = FileList["lib/**/*.rb"]

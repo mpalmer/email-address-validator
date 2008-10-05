@@ -122,10 +122,12 @@ class EmailAddressValidator
 	end
 
 	def self.validate_with_regex(address)
+		debug "Validating #{address} with regex"
 		EmailAddressValidator::Regexp::ADDR_SPEC =~ address
 	end
 	
 	def self.validate_with_dns(address)
+		debug "Validating #{address} with DNS"
 		EmailAddressValidator::Regexp::ADDR_SPEC =~ address
 		domain = $2
 		dns = Resolv::DNS.new

@@ -6,7 +6,7 @@ module EmailAddressValidator::Regexp
 	QTEXT = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7E]/
 	QUOTED_PAIR = /\\#{TEXT}/
 	QCONTENT = /(?:#{QTEXT}|#{QUOTED_PAIR})/
-	QUOTED_STRING = /"(?:\s*#{QCONTENT})\s*"/
+	QUOTED_STRING = /"(?:\s*#{QCONTENT})*\s*"/
 
 	DTEXT = /[\x01-\x08\x0B\x0C\x0E-\x1F\x21-\x5A\x5E-\x7E]/
 	DCONTENT = /(?:#{DTEXT}|#{QUOTED_PAIR})/
@@ -15,5 +15,5 @@ module EmailAddressValidator::Regexp
 
 	LOCAL_PART = /(?:#{DOT_ATOM}|#{QUOTED_STRING})/
 
-	ADDR_SPEC = /(#{LOCAL_PART})@(#{DOMAIN})/
+	ADDR_SPEC = /^(#{LOCAL_PART})@(#{DOMAIN})$/
 end
